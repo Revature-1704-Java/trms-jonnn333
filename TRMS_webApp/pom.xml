@@ -8,6 +8,7 @@
   <name>TRMS_webApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -37,5 +38,22 @@
   </dependencies>
   <build>
     <finalName>TRMS_webApp</finalName>
+    
+   <resources>
+       
+     <resource>
+       <directory>[your folder here]</directory>
+     </resource>
+     
+      <resource>
+       <directory>[your folder here]</directory>
+     </resource>
+     
+     <resource>
+       <directory>[your folder here]</directory>
+     </resource>
+   </resources>
+   
+   
   </build>
 </project>
