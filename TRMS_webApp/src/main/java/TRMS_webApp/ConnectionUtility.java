@@ -1,4 +1,4 @@
-package com.Revature.TRMS;
+package TRMS_webApp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

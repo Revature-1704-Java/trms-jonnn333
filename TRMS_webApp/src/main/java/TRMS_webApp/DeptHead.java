@@ -1,4 +1,4 @@
-package com.Revature.TRMS;
+package TRMS_webApp;
 
 public class DeptHead extends Employee {
 

@@ -1,4 +1,4 @@
-package com.Revature.TRMS;
+package TRMS_webApp;
 
 public class Employee {
 
@@ -7,7 +7,7 @@ public class Employee {
 	String lastName;
 	String reportsTo;
 	
-	Employee(String eid, String first, String last, String reportsTo) {
+	public Employee(String eid, String first, String last, String reportsTo) {
 		this.employeeID = eid;
 		this.firstName = first;
 		this.lastName = last;

@@ -1,16 +1,26 @@
-package com.Revature.TRMS_webApp;
+package daos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class BenCoDAO {
+import TRMS_webApp.Employee;
+import TRMS_webApp.ConnectionUtility;
 
-	public List<BenCo> getAllEmployees() {
+
+public class EmployeeDAO {
+	
+	public List<Employee> getAllEmployees() {
 		PreparedStatement ps = null;
-		BenCo ben = null;
-		List<BenCo> Employees = new ArrayList<>();
+		Employee E = null;
+		List<Employee> Employees = new ArrayList<Employee>();
 		
-		try(Connection conn = ConnectionDAO.getConnection()) {
-			String sql = "SELECT * FROM BenefitsCoordinator";
+		try {
+			Connection conn = ConnectionUtility.getConnection();
+			String sql = "SELECT * FROM Employee";
 			ps = conn.prepareStatement(sql);
 			//Add any variables to PS
 			ResultSet rs = ps.executeQuery();
@@ -22,7 +32,7 @@ public class BenCoDAO {
 				String last = rs.getString("LastName");
 				String reportsTo = rs.getString("reportsTo");
 				
-				E = new ben(id, first, last, reportsTo);
+				E = new Employee(id, first, last, reportsTo);
 				Employees.add(E);
 				
 			}
@@ -35,32 +45,27 @@ public class BenCoDAO {
 		return Employees;
 	}
 	
-	public BenCo getEmployee(String req_id) {
+	public Employee getEmployee(String req_id) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		BenCo EA = null;
-		try(Connection conn = ConnectionDAO.getConnection()) {
+		Employee E = null;
+		try {
+			Connection conn = ConnectionUtility.getConnection();
 			//String sql = "SELECT * FROM BEAR WHERE BEAR_ID = ?";
-			String sql = "SELECT * FROM BenefitsCoordinator WHERE EmployeeID = ?";
+			String sql = "SELECT * FROM Employee WHERE EmployeeID = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, req_id);
 			
 			rs = ps.executeQuery();
 			
 			while (rs.next()) {
-				//int bid = rs.getInt("BEAR_ID");
-				//String name = rs.getString("BEAR_NAME");
-				//int age = rs.getInt("BEAR_AGE");
-				//int weight = rs.getInt("BEAR_WEIGHT");
-				
-				//b = new Bear(bid, name, age, weight);
 				
 				String id = rs.getString("EmployeeID");
 				String first = rs.getString("FirstName");
 				String last = rs.getString("LastName");
 				String reportsTo = rs.getString("reportsTo");
 				
-				E = new ben(id, first, last, reportsTo);
+				E = new Employee(id, first, last, reportsTo);
 				
 			}
 		} catch (Exception ex) {
@@ -85,4 +90,5 @@ public class BenCoDAO {
 		}
 		return E;
 	}
+	
 }

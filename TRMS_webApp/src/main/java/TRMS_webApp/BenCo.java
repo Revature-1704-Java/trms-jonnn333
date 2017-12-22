@@ -1,4 +1,4 @@
-package com.Revature.TRMS_webApp;
+package TRMS_webApp;
 
 public class BenCo extends Employee {
 

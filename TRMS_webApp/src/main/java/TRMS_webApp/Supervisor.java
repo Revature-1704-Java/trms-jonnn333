@@ -1,4 +1,4 @@
-package com.Revature.TRMS;
+package TRMS_webApp;
 
 public class Supervisor extends Employee {
 
@@ -9,7 +9,7 @@ public class Supervisor extends Employee {
 		this.reportsTo = reportsTo;
 	}
 	
-	Supervisor () {
+	public Supervisor () {
 		// empty constructor!
 	}
 }
