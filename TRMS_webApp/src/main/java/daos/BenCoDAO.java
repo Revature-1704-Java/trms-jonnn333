@@ -1,6 +1,13 @@
 package daos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import TRMS_webApp.BenCo;
+import TRMS_webApp.ConnectionUtility;
 
 public class BenCoDAO {
 
@@ -9,8 +16,8 @@ public class BenCoDAO {
 		BenCo ben = null;
 		List<BenCo> Employees = new ArrayList<>();
 		
-		try(Connection conn = ConnectionDAO.getConnection()) {
-			String sql = "SELECT * FROM BenefitsCoordinator";
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			String sql = "SELECT * FROM Employee, EmployeeType WHERE EmployeeType = ";
 			ps = conn.prepareStatement(sql);
 			//Add any variables to PS
 			ResultSet rs = ps.executeQuery();

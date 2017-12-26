@@ -5,13 +5,15 @@ public class Employee {
 	String employeeID;
 	String firstName;
 	String lastName;
-	String reportsTo;
+	String email;
+	String supervisorID;
 	
-	public Employee(String eid, String first, String last, String reportsTo) {
+	public Employee(String eid, String first, String last, String email, String supervisorID) {
 		this.employeeID = eid;
 		this.firstName = first;
 		this.lastName = last;
-		this.reportsTo = reportsTo;
+		this.email = email;
+		this.supervisorID = supervisorID;
 	}
 	
 	Employee() {
@@ -44,16 +46,24 @@ public class Employee {
 	public String getLastName() {
 		return lastName;
 	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
 	public String getReportsTo() {
-		return reportsTo;
+		return supervisorID;
 	}
 
-	public void setReportsTo(String reportsTo) {
-		this.reportsTo = reportsTo;
+	public void setReportsTo(String supervisorID) {
+		this.supervisorID = supervisorID;
 	}
 }

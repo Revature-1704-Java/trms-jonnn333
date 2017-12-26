@@ -13,10 +13,11 @@ import TRMS_webApp.ConnectionUtility;
 
 public class EmployeeDAO {
 	
+	// get all Employees' info (no password)
 	public List<Employee> getAllEmployees() {
 		PreparedStatement ps = null;
-		Employee E = null;
-		List<Employee> Employees = new ArrayList<Employee>();
+		Employee EmployeeObject = null;
+		List<Employee> EmployeesList = new ArrayList<Employee>();
 		
 		try {
 			Connection conn = ConnectionUtility.getConnection();
@@ -27,13 +28,15 @@ public class EmployeeDAO {
 			
 			while (rs.next()) {
 				
+				// not going to store ALL columns, despite using select-all SQL query 
 				String id = rs.getString("EmployeeID");
 				String first = rs.getString("FirstName");
 				String last = rs.getString("LastName");
-				String reportsTo = rs.getString("reportsTo");
+				String email = rs.getString("Email");
+				String supervisorID = rs.getString("SupervisorID");
 				
-				E = new Employee(id, first, last, reportsTo);
-				Employees.add(E);
+				EmployeeObject = new Employee(id, first, last, email, supervisorID);
+				EmployeesList.add(EmployeeObject);
 				
 			}
 			rs.close();
@@ -42,13 +45,15 @@ public class EmployeeDAO {
 			ex.getMessage();
 		}
 		
-		return Employees;
+		return EmployeesList;
 	}
 	
+	// get one particular employee's info (no password)
 	public Employee getEmployee(String req_id) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Employee E = null;
+		Employee EmployeeObject = null;
+		
 		try {
 			Connection conn = ConnectionUtility.getConnection();
 			//String sql = "SELECT * FROM BEAR WHERE BEAR_ID = ?";
@@ -63,9 +68,10 @@ public class EmployeeDAO {
 				String id = rs.getString("EmployeeID");
 				String first = rs.getString("FirstName");
 				String last = rs.getString("LastName");
-				String reportsTo = rs.getString("reportsTo");
+				String email = rs.getString("Email");
+				String supervisorID = rs.getString("SupervisorID");
 				
-				E = new Employee(id, first, last, reportsTo);
+				EmployeeObject = new Employee(id, first, last, email, supervisorID);
 				
 			}
 		} catch (Exception ex) {
@@ -88,7 +94,7 @@ public class EmployeeDAO {
 				}
 			}
 		}
-		return E;
+		return EmployeeObject;
 	}
 	
 }
