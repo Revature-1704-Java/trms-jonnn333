@@ -13,7 +13,7 @@ import util.ConnectionUtility;
 
 public class EmployeeDAO {
 	
-	// get all Employees' info (no password)
+	// get all Employee info
 	public List<Employee> getAllEmployees() {
 		PreparedStatement ps = null;
 		Employee EmployeeObject = null;
@@ -27,14 +27,23 @@ public class EmployeeDAO {
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {
-				
+				System.out.println("going through result sets! 1");
 				// not going to store ALL columns, despite using select-all SQL query 
-				String id = rs.getString("EmployeeID");
-				String first = rs.getString("FirstName");
-				String last = rs.getString("LastName");
+				String id = rs.getString("Employee_ID");
+				System.out.println("going through result sets! 2");
+				String first = rs.getString("First_Name");
+				System.out.println("going through result sets! 3");
+				String last = rs.getString("Last_Name");
+				System.out.println("going through result sets! 4");
 				String email = rs.getString("Email");
+				System.out.println("going through result sets! 5");
 				String password = rs.getString("Password");
+				System.out.println("going through result sets! 6");
 				String supervisorID = rs.getString("SupervisorID");
+				System.out.println("going through result sets! 7");
+				// int employeeTypeID = rs.getInt("employeeTypeID"); // int cannot accept null
+				System.out.println("information to be loaded: "+id+" | "+last+" | "+ email + " | " + password
+						+ " | " + supervisorID);
 				
 				EmployeeObject = new Employee(id, first, last, email, password, supervisorID);
 				EmployeesList.add(EmployeeObject);

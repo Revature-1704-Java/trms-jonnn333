@@ -10,7 +10,8 @@ public class Employee implements Serializable {
 	private String email;
 	private String password;
 	private String supervisorID;
-	private boolean isBenco; 
+	private String employeeType; // regular, supervisor, dept. head, or benco
+	private String permissions; // requestor, approver, or both
 	
 	private Employee supervisor;
 	
@@ -21,6 +22,7 @@ public class Employee implements Serializable {
 		this.email = email;
 		this.password = password;
 		this.supervisorID = supervisorID;
+		System.out.println("object created!");
 	}
 	
 	Employee() {
@@ -61,6 +63,14 @@ public class Employee implements Serializable {
 	public String getEmail() {
 		return email;
 	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -74,11 +84,4 @@ public class Employee implements Serializable {
 		this.supervisorID = supervisorID;
 	}
 	
-	public boolean getBenco() {
-		return this.isBenco;
-	}
-	
-	public void setBenco(boolean isBenco) {
-		this.isBenco = isBenco;
-	}
 }
