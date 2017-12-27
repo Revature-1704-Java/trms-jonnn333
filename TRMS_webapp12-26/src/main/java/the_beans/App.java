@@ -1,12 +1,9 @@
-package TRMS_webApp;
+package the_beans;
 
 import java.sql.SQLException;
 
-import daos.BenCoDAO;
-import daos.DeptHeadDAO;
 import daos.EmployeeDAO;
 import daos.ReimburseDAO;
-import daos.SupervisorDAO;
 
 
 public class App {
@@ -42,9 +39,6 @@ public class App {
     	
     	ReimburseDAO reimburse = new ReimburseDAO();
     	EmployeeDAO employee = new EmployeeDAO();
-    	SupervisorDAO superv = new SupervisorDAO();
-    	DeptHeadDAO dept = new DeptHeadDAO();
-    	BenCoDAO bCoordntr = new BenCoDAO();
     	
     }
 }

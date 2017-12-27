@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import TRMS_webApp.Employee;
-import TRMS_webApp.ConnectionUtility;
+import the_beans.Employee;
+import util.ConnectionUtility;
 
 
 public class EmployeeDAO {

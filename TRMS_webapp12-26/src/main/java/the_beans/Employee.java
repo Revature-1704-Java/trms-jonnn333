@@ -1,6 +1,8 @@
-package TRMS_webApp;
+package the_beans;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 
 	String employeeID;
 	String firstName;
