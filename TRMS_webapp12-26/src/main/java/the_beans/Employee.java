@@ -4,17 +4,22 @@ import java.io.Serializable;
 
 public class Employee implements Serializable {
 
-	String employeeID;
-	String firstName;
-	String lastName;
-	String email;
-	String supervisorID;
+	private String employeeID;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	private String supervisorID;
+	private boolean isBenco; 
 	
-	public Employee(String eid, String first, String last, String email, String supervisorID) {
+	private Employee supervisor;
+	
+	public Employee(String eid, String first, String last, String email, String password, String supervisorID) {
 		this.employeeID = eid;
 		this.firstName = first;
 		this.lastName = last;
 		this.email = email;
+		this.password = password;
 		this.supervisorID = supervisorID;
 	}
 	
@@ -67,5 +72,13 @@ public class Employee implements Serializable {
 
 	public void setReportsTo(String supervisorID) {
 		this.supervisorID = supervisorID;
+	}
+	
+	public boolean getBenco() {
+		return this.isBenco;
+	}
+	
+	public void setBenco(boolean isBenco) {
+		this.isBenco = isBenco;
 	}
 }

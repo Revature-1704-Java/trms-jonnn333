@@ -33,9 +33,10 @@ public class EmployeeDAO {
 				String first = rs.getString("FirstName");
 				String last = rs.getString("LastName");
 				String email = rs.getString("Email");
+				String password = rs.getString("Password");
 				String supervisorID = rs.getString("SupervisorID");
 				
-				EmployeeObject = new Employee(id, first, last, email, supervisorID);
+				EmployeeObject = new Employee(id, first, last, email, password, supervisorID);
 				EmployeesList.add(EmployeeObject);
 				
 			}
@@ -69,9 +70,10 @@ public class EmployeeDAO {
 				String first = rs.getString("FirstName");
 				String last = rs.getString("LastName");
 				String email = rs.getString("Email");
+				String password = rs.getString("Password");
 				String supervisorID = rs.getString("SupervisorID");
 				
-				EmployeeObject = new Employee(id, first, last, email, supervisorID);
+				EmployeeObject = new Employee(id, first, last, email, password, supervisorID);
 				
 			}
 		} catch (Exception ex) {
