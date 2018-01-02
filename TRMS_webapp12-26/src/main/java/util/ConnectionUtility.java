@@ -17,6 +17,8 @@ public class ConnectionUtility {
 		service: the database instance to connect to
 	*/
 	
+	// alt method in Slack channel
+	
 	private static Connection connection;
 	
 	public static synchronized Connection getConnection() throws SQLException {

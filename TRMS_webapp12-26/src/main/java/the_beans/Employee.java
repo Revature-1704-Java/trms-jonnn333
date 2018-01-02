@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Employee implements Serializable {
 
+	private static final long serialVersionUID = -1387957067388822119L;
+	
 	private String employeeID;
 	private String firstName;
 	private String lastName;
@@ -11,7 +13,6 @@ public class Employee implements Serializable {
 	private String password;
 	private String supervisorID;
 	private String employeeType; // regular, supervisor, dept. head, or benco
-	private String permissions; // requestor, approver, or both
 	
 	private Employee supervisor;
 	
@@ -22,18 +23,12 @@ public class Employee implements Serializable {
 		this.email = email;
 		this.password = password;
 		this.supervisorID = supervisorID;
-		System.out.println("object created!");
+		//System.out.println("object created!");
 	}
 	
 	Employee() {
 		// empty constructor! 
 	}
-
-	// custom methods
-	public void requestApproval () {
-		System.out.println("request sent");
-	}
-	
 	
 	// getters and setters
 	public String getEmployeeID() {
