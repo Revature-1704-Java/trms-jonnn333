@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import daos.EmployeeDAO;
 import daos.ReimburseDAO;
 
@@ -51,5 +53,6 @@ public class App {
     		System.out.println(guy.getFirstName() + " " + guy.getLastName() + ", whose id is " + guy.getEmployeeID());
     	}
     	
+    	JsonNode json; // need mappers and arrayNodes 
     }
 }

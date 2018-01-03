@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>servletSector.MainServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ReimbursementEntry</servlet-name>
+  	<display-name>ReimbursementEntry</display-name>
+  	<description></description>
+  	<servlet-class>servletSector.ReimbursementEntry</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>MainServlet</servlet-name>
   	<url-pattern>/MainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReimbursementEntry</servlet-name>
+  	<url-pattern>/ReimbursementEntry</url-pattern>
   </servlet-mapping>
 </web-app>
