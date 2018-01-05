@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -297,8 +297,8 @@ public class ReimburseDAO implements ReimburseDAO_Inferface {
 		try {
 			Connection conn = ConnectionUtility.getConnection();
 			
-			String sql = "INSERT INTO Reimbursements VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " // 13 ?
-					+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?"; //10 ?
+			String sql = "INSERT INTO Reimbursements VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " // 13 of ?
+					+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; //10 of ?
 			ps = conn.prepareStatement(sql);
 			
 			ps.setInt(1, reimburseEntry.getReimbursementID());
@@ -311,8 +311,8 @@ public class ReimburseDAO implements ReimburseDAO_Inferface {
 			ps.setString(8, reimburseEntry.getEventCountry());
 			ps.setString(9, reimburseEntry.getEventZipCode());
 			ps.setString(10, reimburseEntry.getEvent_Justification());
-			ps.setInt(11, reimburseEntry.getGradeFormatId());
-			ps.setDate(12, reimburseEntry.getClassStartDate()); // cannot cast sql date to java date and vice versa...fix front-end
+			ps.setDate(11, reimburseEntry.getClassStartDate()); // cannot cast sql date to java date and vice versa...fix front-end
+			ps.setInt(12, reimburseEntry.getGradeFormatId());
 			ps.setDouble(13, reimburseEntry.getReimbursementCost());
 			ps.setDouble(14, reimburseEntry.getReimbursementAward());
 			ps.setDate(15, reimburseEntry.getSubmission());

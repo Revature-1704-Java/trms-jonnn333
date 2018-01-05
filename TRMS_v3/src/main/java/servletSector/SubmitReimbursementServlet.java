@@ -2,7 +2,7 @@ package servletSector;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -36,13 +36,12 @@ public class SubmitReimbursementServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		//request.getRequestDispatcher("Link.html").include(request, response);
 		
 		HttpSession session = request.getSession(false); // if session doesn't exist, create new session
-		
+
 		if(session != null){
 			String name = (String) session.getAttribute("name");
 			out.print("Hello, "+name+", Welcome to your Profile page!");
@@ -60,9 +59,9 @@ public class SubmitReimbursementServlet extends HttpServlet {
 			String eventJustification = request.getParameter("eventJustification");
 			
 			out.print("parameters received");
-			
-			Date event_timeStamp = null;
-			String event_timeStamp_str = request.getParameter("event_timeStamp");
+			java.util.Date event_timeStamp = null;
+			String event_timeStamp_str = request.getParameter("event_timeStamp");			
+
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			//surround below line with try catch block as below code throws checked exception
 			try {
@@ -109,12 +108,12 @@ public class SubmitReimbursementServlet extends HttpServlet {
 			
 			Reimburse ReimburseEntry = new Reimburse (reimburseID, employeeID, eventID, 
 					eventDescription, address, city, state, country, zipCode, eventJustification, gradeFormatID,
-					event_timeStamp, reimbursementCost, reimburseAward, submissionTime, timeMissed, status, exceedsAmount, 
+					new java.sql.Date(event_timeStamp.getTime()), reimbursementCost, reimburseAward, submissionTime, timeMissed, status, exceedsAmount, 
 					exceedsReason, denyReason, supApprove, deptHeadApprove, benCoApprove);
-					
-			ReimburseEntry.getBenCoApprove(); // replace with create new entry DAO method! need INSERT INTO, first check if unique
 			
 			out.print("<br/>Your reimbursement object is: <br/>"+ReimburseEntry.toString());
+			
+			handleReimbursements.insertReimbursement(ReimburseEntry);
 			
 		}
 		else {

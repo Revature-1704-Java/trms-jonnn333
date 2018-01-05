@@ -3,7 +3,7 @@ package the_beans;
 import java.io.File;
 import java.io.Serializable;
 //import java.sql.Blob;
-import java.util.Date;
+import java.sql.Date;
 
 public class Reimburse implements Serializable {
 
