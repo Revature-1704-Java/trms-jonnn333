@@ -50,10 +50,10 @@ public class LoginServlet extends HttpServlet {
 			Employee employeeObject = new Employee();
 			//employeeCheck.getEmployee("");
 			
-			
 			out.print("Welcome, "+name+" (testLogin)");
 			HttpSession session = request.getSession();
 			session.setAttribute("name", name);
+			session.setAttribute("password", password);
 		}
 		
 		else {

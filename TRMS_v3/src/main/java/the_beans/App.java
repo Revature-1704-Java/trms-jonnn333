@@ -24,7 +24,7 @@ public class App {
 	 	
 	 	Requirements:		[y] = yes	[i-p] = in-progress	[] = not yet started
 	 		- [y] as many business requirements (as possible)
-	 		- [y] RDS, 11g Database
+	 		- [y] RDS, 11g Database [Oracle]
 	 		- [y] Stored procedures (use DAO example for inspiration)
 	 		- [y] DAO, Factories/Singleton	
 	 		- [y] ERDs (design your own db + table data) (+ some UML for personal use)
@@ -45,7 +45,29 @@ public class App {
 	 		1b) Integer won't be able to take getInt() output; it returns primitive int value
 	 		2) NOTE: html pages need to be in SAME DIRECTORY as webapp AND WEB-INF; cannot be in folder
 	 	Solutions:
-	 		1a, 1b) using getObject() and casting to (Integer);; correction: int can hold between approx. -2M to 2M
+	 		1a, 1b) using getObject() and casting to (Integer);; correction: int can hold between approx. -2.147M to 2.147M
+	 		
+	 	
+	 	Status changes depending on who's approving/denying/requesting info
+		Let status = 0 mean submitted by Employee (pending)
+		
+		Let status = 2 mean approved by supervisor
+		Let status = 4 mean request additional docs; need reason (put in denied column temp)
+		Let status = 6 mean denied by supevisor; need reason
+		NOTE: with given table setup, supervisor will NOT ever be a dept head (biz rule)
+		
+		Let status = 12 mean approved by Dept Head
+		Let status = 14 mean request additional docs; need reason (put in denied column temp)
+		Let status = 16 mean denied by Dept Head; need reason
+		
+		Let status = 22 mean approved by benCo
+		Let status = 24 mean request additional docs from Employee
+		Let status = 26 mean request additional docs from Supervisor
+		Let status = 28 mean request additional docs from Dept Head
+		Let status = 30 mean reimbursement altered by benCo
+		
+		Let status = 98 mean auto-approved Supervisor
+		Let status = 99 mean auto-approved by Dept Head
 	 */
 	
 	

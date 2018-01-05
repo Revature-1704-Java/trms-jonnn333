@@ -38,7 +38,7 @@ public class LogOutServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		session.invalidate();
 		
-		out.print("You are successfully logged out!");
+		out.print("You have successfully logged out!");
 		
 		out.close();
 	}

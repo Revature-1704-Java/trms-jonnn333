@@ -3,7 +3,7 @@ package the_beans;
 import java.io.File;
 import java.io.Serializable;
 //import java.sql.Blob;
-import java.sql.Date;
+import java.util.Date;
 
 public class Reimburse implements Serializable {
 
@@ -12,7 +12,7 @@ public class Reimburse implements Serializable {
 	//---------------------------------------------------------------------------------------------
 	private File documents = null; // retrieve files from system after finding index in db
 	private int reimbursementID;
-	private String employee_ID;
+	private int employee_ID;
 	private Date classStartDate;
 	private String eventDescription;
 	private String eventAddress;
@@ -50,7 +50,7 @@ public class Reimburse implements Serializable {
 	//---------------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------------
 	
-	public Reimburse (int reimbursementID, String employeeID, int EventID, 
+	public Reimburse (int reimbursementID, int employeeID, int EventID, 
 			String eventDescription, String eventAddress, String eventCity, String eventState,
 			String eventCountry, String eventZipCode, String justification, int gradeFormatID,
 			Date eventTime, double reimburseCost, double reimburseAward, Date submission, 
@@ -106,12 +106,12 @@ public class Reimburse implements Serializable {
 	}
 
 
-	public String getEmployee_ID() {
+	public int getEmployee_ID() {
 		return employee_ID;
 	}
 
 
-	public void setEmployee_ID(String employee_ID) {
+	public void setEmployee_ID(int employee_ID) {
 		this.employee_ID = employee_ID;
 	}
 

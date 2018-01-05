@@ -34,11 +34,13 @@ public class ProfileServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		request.getRequestDispatcher("Link.html").include(request, response);
 		
-		HttpSession session=request.getSession(false);
+		HttpSession session = request.getSession(false);
 		if(session!=null){
-		String name=(String)session.getAttribute("name");
-		
-		out.print("Hello, "+name+", Welcome to Profile");
+			String name=(String)session.getAttribute("name");
+			out.print("Hello, "+name+", Welcome to your Profile page!");
+			
+			
+			
 		}
 		else{
 			out.print("Please login first");

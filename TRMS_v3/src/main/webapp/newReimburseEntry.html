@@ -12,30 +12,31 @@
 		</div>
 	</header>
 
-	<div class="">
+	<div class="lookGood">
 		<h4>Please fill out this form. Be as complete as possible! </h4>
 		<form action="SubmitReimbursementServlet" method="GET">
-			<label for="username">EmployeeID</label>
-			<input type="text" name="username" > <!-- Retrieve the user/password, display user id only -->
+			<label for="employeeID">EmployeeID</label>
+			<input type="text" name="employeeID" > <!-- Retrieve the user/password, display user id only -->
 			<br/>			
 			<label for="reimburseID">Reimbursement ID</label>
-			<input type="text" name="reimburseID" >
+			<input type="text" name="reimburseID">
 			<br/>
 			<br>
 			<label for="eventType">Event Type </label>
 			<!-- <input type="text" name="eventType"> --> <!-- drop-down menu? -->
-			<select for="eventType">
-				<option value="blank"></option>
-  				<option value="UniversityCourse">University Course</option>
-  				<option value="Seminar">Seminar</option>
-  				<option value="CertificationPreparationClasses">Certification Preparation Class</option>
-  				<option value="Certification">Certification</option>
-  				<option value="TechnicalTraining">Technical Training</option>
-  				<option value="Other">Other</option>
-			</select> 
+			<select for="eventType" name="eventID">
+				<option value=0></option>
+  				<option value=1>University Course</option>
+  				<option value=2>Seminar</option>
+  				<option value=3>Certification Preparation Class</option>
+  				<option value=4>Certification</option>
+  				<option value=5>Technical Training</option>
+  				<option value=6>Other</option>
+			</select>
+			 
 			<br/>
-			<textarea rows="4" cols="45" for="eventDescription" placeholder="event description / comments"></textarea>
-			<input type="submit" name="eventDescription" readonly hidden>
+			<textarea rows="4" cols="45" for="eventDescription" placeholder="event description / comments" name="eventDescription"></textarea>
+			<!-- <input type="submit" name="eventDescription" readonly hidden> -->
 			<br/>
 			<label for="eventAddress">Event Address</label>
 			<input type="text" name="eventAddress">
@@ -47,7 +48,7 @@
 			<br/>
 			<label for="state">Event State</label> 
 			<!-- <input type="text" name="state"> -->
-			<select form="state">
+			<select form="state" name="state">
 				<option value="blank"></option>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
@@ -107,21 +108,21 @@
 			Accepting only US-based events at this time.
 			<br/>
 			<label>ZIP Code</label>
-			<input type="text" pattern="[0-9]{5}" title="Five digit zip code" />
+			<input type="text" pattern="[0-9]{5}" title="Five digit zip code" name="zipCode" />
 			<br/>
 			<textarea rows="4" cols="45" for="eventJustification" placeholder="event Justification / comments"></textarea>
 			<input type="submit" name="eventDescription" readonly hidden>
 			<br/>
-			<label for="date">Event Timestamp</label> 
+			<label for="event_timeStamp">Event Timestamp</label> 
 			<input type="date" name="event_timeStamp">
 			<br/>
 			<label for="gradeFormatID">Grade Format</label> 
-			<select form="gradeFormatID">
-				<option value = "blank"> </option>
-				<option value = 1>Letter Grade (A-F)</option>
-				<option value = 2>Pass/Fail</option>
-				<option value = 3>Percentage</option>
-				<option value = 4>GPA (4.0 scale)</option>
+			<select form="gradeFormatID" name="gradeFormatID">
+				<option value ="0"> </option>
+				<option value ="1">Letter Grade (A-F)</option>
+				<option value ="2">Pass/Fail</option>
+				<option value ="3">Percentage</option>
+				<option value ="4">GPA (4.0 scale)</option>
 			</select>
 			</br>
 			<label for="reimbursementCost">Reimbursement Cost</label> 

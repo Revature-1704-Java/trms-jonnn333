@@ -19,6 +19,7 @@ begin
     delete from FileStorage where reimbursementID = inp_ReimburseID;
     commit;
     -- Note: may need to alter/drop foreign keys, and/or change order of statements
+    -- possibly use keywork: CASCADE?
     
     exception when others then
         DBMS_OUTPUT.PUT_LINE('Delete unsuccessful');
