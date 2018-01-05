@@ -86,6 +86,11 @@ public class Reimburse implements Serializable {
 	}
 
 
+	public Reimburse() {
+		// empty constructor!
+	}
+
+
 	public File getDocuments() {
 		return documents;
 	}

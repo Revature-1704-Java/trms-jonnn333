@@ -22,7 +22,7 @@ Insert into Employee(employee_ID, first_name, last_name, email, dept_HeadID) val
 -- DROP TABLE Reimbursements
 CREATE TABLE Reimbursements (
     Reimbursement_ID integer Primary Key,
-    Employee_ID integer unique,
+    Employee_ID integer, -- NOT unique; is it currently unique?
     Event_ID integer,
     Event_Description varchar2(255),
     Event_Address varchar2(255),

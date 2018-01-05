@@ -16,7 +16,7 @@ public class App {
 	// note: don't rely on main too heavily! 12/20/17
 	// "do not use main in your project" - Mehrab, 12/21/17
 	
-	// DUE: January 5th, 2018 (4 days!) 
+	// DUE: January 5th, 2018, 6pm 
 	
 	/*
 	 Tuition Reimbursement Management System (TRMS)
@@ -28,10 +28,10 @@ public class App {
 	 		- [y] Stored procedures (use DAO example for inspiration)
 	 		- [y] DAO, Factories/Singleton	
 	 		- [y] ERDs (design your own db + table data) (+ some UML for personal use)
-	 		- [] JUnit, Maven, log4j [test | build | logging-anything]
-	 		- [y] Documentation (ie. readme files, java comments, some sort of routine)
-	 		- [i-p] Servlets (+12/28/17)
-	 		- [i-p] HTML/CSS/JS (+12/28/17)
+	 		- [y*] JUnit, Maven, log4j [test | build | logging-anything]
+	 		- [y~] Documentation (ie. readme files, java comments, some sort of routine)
+	 		- [y*] Servlets (+12/28/17)
+	 		- [y*] HTML/CSS/JS (+12/28/17)
 	 		- [] AJAX (+12/28/17) [XMLHTTPRequest]
 	 	- Additional todo
 	 		- [] presentation slides, code, live version of website (replaces usual 1-on-1)
