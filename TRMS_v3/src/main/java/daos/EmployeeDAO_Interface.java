@@ -7,5 +7,7 @@ import the_beans.Employee;
 public interface EmployeeDAO_Interface {
 
 	public List<Employee> getAllEmployees();
-	public Employee getEmployee(String req_id);
+	public Employee getEmployee(Integer eid);
+	
+	public boolean isValidEmployee(String email, String password);
 }

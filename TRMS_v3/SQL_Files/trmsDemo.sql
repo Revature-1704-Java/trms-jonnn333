@@ -116,6 +116,12 @@ INSERT INTO GradingFormat VALUES(4, 'GPA', '2.0'); -- GPA 2.0 C
 -- Resources
 -- https://stackoverflow.com/questions/18435065/foreign-key-to-non-primary-key
 
+-- Format; from https://www.techonthenet.com/oracle/foreign_keys/foreign_keys.php
+-- ALTER TABLE table_name
+-- ADD CONSTRAINT constraint_name
+-- FOREIGN KEY (column1, column2, ... column_n)
+-- REFERENCES parent_table (column1, column2, ... column_n);
+
 ALTER TABLE Reimbursements -- switch to Reimbursements b/c you want that table's column ref to be FK
 ADD CONSTRAINT FK_EmployeeReimburseEntries
 FOREIGN KEY (Employee_ID) REFERENCES Employee(Employee_ID);

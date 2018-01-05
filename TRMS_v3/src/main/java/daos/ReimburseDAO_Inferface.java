@@ -39,5 +39,19 @@ public interface ReimburseDAO_Inferface {
 	// do valid checks for inputs
 	public boolean setReason(int reimburseID, String reason);
 	
+/*
+	Possible query needed for special privileges
+	
+		Employees (sup, dept, employeeid)
+		Reimbursements (reimburse data, employeeid)
+		
+		// supervisor wants all reimbursements of their employees
+		Select * 
+		From Reimbursements r
+		Where r.EmployeeID = (Select e.EmployeeID from Employee e
+							 Where r.EmployeeID = e.EmployeeID AND e.supervisorID = ?)
+	 
+	 
+*/
 	
 }

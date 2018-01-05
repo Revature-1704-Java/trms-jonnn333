@@ -347,6 +347,21 @@ public class Reimburse implements Serializable {
 	public void setExceedsReason(String exceedsReason) {
 		this.exceedsReason = exceedsReason;
 	}
+	
+	@Override
+	public String toString() {
+		return "Reimburse [documents=" + documents + ", reimbursementID=" + reimbursementID + ", employee_ID="
+				+ employee_ID + ", classStartDate=" + classStartDate + ", eventDescription=" + eventDescription
+				+ ", eventAddress=" + eventAddress + ", eventCity=" + eventCity + ", eventState=" + eventState
+				+ ", eventCountry=" + eventCountry + ", eventZipCode=" + eventZipCode + ", ReimbursementCost="
+				+ ReimbursementCost + ", ReimbursementAward=" + ReimbursementAward + ", gradeFormatId=" + gradeFormatId
+				+ ", gradeFormat=" + gradeFormat + ", eventTypeID=" + eventTypeID + ", event_Justification="
+				+ event_Justification + ", status=" + status + ", timeMissed=" + timeMissed + ", denyReason="
+				+ denyReason + ", submission=" + submission + ", exceedsAmount=" + exceedsAmount + ", exceedsReason="
+				+ exceedsReason + ", defaultPassingGrade=" + defaultPassingGrade + ", supApprove=" + supApprove
+				+ ", deptHeadApprove=" + deptHeadApprove + ", benCoApprove=" + benCoApprove + ", eventType=" + eventType
+				+ "]";
+	}
 
 	
 }

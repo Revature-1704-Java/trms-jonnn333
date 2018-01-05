@@ -13,13 +13,13 @@
 	</header>
 
 	<div class="">
-		<h4>Please fill out this form. Tanks bruh.</h4>
-		<form action="" method="GET">
+		<h4>Please fill out this form. Be as complete as possible! </h4>
+		<form action="SubmitReimbursementServlet" method="GET">
 			<label for="username">EmployeeID</label>
-			<input type="text" name="username" value="testEmployeeID = 505" readonly > <!-- Retrieve the user/password, display user id only -->
+			<input type="text" name="username" > <!-- Retrieve the user/password, display user id only -->
 			<br/>			
 			<label for="reimburseID">Reimbursement ID</label>
-			<input type="text" name="reimburseID" value="testValueNoEdit" readonly >
+			<input type="text" name="reimburseID" >
 			<br/>
 			<br>
 			<label for="eventType">Event Type </label>
@@ -47,7 +47,7 @@
 			<br/>
 			<label for="state">Event State</label> 
 			<!-- <input type="text" name="state"> -->
-			<select>
+			<select form="state">
 				<option value="blank"></option>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
@@ -106,13 +106,41 @@
 			<input type="text" name="country" value="US" placeholder="United States (US)" readonly>
 			Accepting only US-based events at this time.
 			<br/>
-			
 			<label>ZIP Code</label>
 			<input type="text" pattern="[0-9]{5}" title="Five digit zip code" />
 			<br/>
+			<textarea rows="4" cols="45" for="eventJustification" placeholder="event Justification / comments"></textarea>
+			<input type="submit" name="eventDescription" readonly hidden>
+			<br/>
+			<label for="date">Event Timestamp</label> 
+			<input type="date" name="event_timeStamp">
+			<br/>
+			<label for="gradeFormatID">Grade Format</label> 
+			<select form="gradeFormatID">
+				<option value = "blank"> </option>
+				<option value = 1>Letter Grade (A-F)</option>
+				<option value = 2>Pass/Fail</option>
+				<option value = 3>Percentage</option>
+				<option value = 4>GPA (4.0 scale)</option>
+			</select>
+			</br>
+			<label for="reimbursementCost">Reimbursement Cost</label> 
+			<input type="number" step="any" name="reimbursementCost">
+			<br/>
+			<!-- ReimburseAward (same as one-line comments below) -->
+			<label for="timeMissed">Time Missed</label> 
+			<input type="number" name="timeMissed" >
+			<br/>
+			<!-- submissionTime (same below)  -->
+			<!-- status (hidden; will be displayed when Employee wants to review (or approve/deny if Sup/Dept/benCo) -->	
+			<!-- exceedsAmount (hidden; to be displayed when viewing entries  -->
+			<!-- exceedsReason (same^)  -->
+			<!-- DeniedReason (same^) -->
+			<!-- SupervisorApprove (same^)  -->
+			<!-- DeptHeadApprive (same^)  -->
+			<!-- BenCoApprive (same^)  -->	
 			
 			<br>
-			
 			<input type="submit" value="Submit Form">
 		</form>
 	</div>

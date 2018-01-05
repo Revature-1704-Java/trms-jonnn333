@@ -19,7 +19,6 @@ public class ReimburseDAO implements ReimburseDAO_Inferface {
 	Reimburse ReimburseObject = null;
 	
 	// get all Reimbursements and accompanying info
-	@Override
 	public List<Reimburse> getAllReimbursements() {
 		List<Reimburse> ReimburseList = new ArrayList<Reimburse>();
 		
@@ -75,7 +74,6 @@ public class ReimburseDAO implements ReimburseDAO_Inferface {
 	}
 	
 	// get specific employee's reimbursements and related info
-	@Override
 	public Reimburse getReimbursement(String eid) {
 		
 		try {
@@ -141,37 +139,31 @@ public class ReimburseDAO implements ReimburseDAO_Inferface {
 		return ReimburseObject;
 	}
 
-	@Override
 	public String FindGradeFormatByID(int gradeID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public ArrayList<File> findRelevantFiles(int reimburseID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public boolean modifyReimburseLim(int reimburseID, String reason) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public boolean approveReimburse(int reimburseID) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public boolean requestAddlDocs(int reimburseID, int status, String reason) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public boolean setReason(int reimburseID, String reason) {
 		// TODO Auto-generated method stub
 		return false;

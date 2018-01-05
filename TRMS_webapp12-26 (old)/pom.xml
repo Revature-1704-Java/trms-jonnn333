@@ -52,6 +52,13 @@
   </dependencies>
   <build>
   
+  <!-- adding /src to pom.xml to see if servlets now recognize page -->
+  	<resources>
+		<resource>
+			<directory>/src</directory>
+		</resource>
+	</resources>
+  
     <finalName>TRMS_webapp12-26</finalName>
     
     <plugins>
@@ -70,9 +77,9 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <url>http://localhost:8080/manager/text</url>
+          <url>http://localhost:8085/manager/text</url>
           <server>TomcatServer</server>
-          <path>/ServletDemo</path>
+          <path>/TRMS_webapp12-26</path>
         </configuration>
       </plugin>
     </plugins>
